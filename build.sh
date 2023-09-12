@@ -13,6 +13,8 @@ else
     pushd "${GIT_DIR}"
 fi
 apt install -y maven
+mvn -version
 mvn clean install
+
 DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
 mvn -f bankid-idp/bankid-idp-backend jib:dockerBuild  -Djib.from.image="${DOCKER_IMAGE}"
