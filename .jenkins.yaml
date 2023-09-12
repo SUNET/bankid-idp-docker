@@ -12,6 +12,6 @@ docker_tags:
   - "latest"
 docker_no_cache: true
 environment_variables:
-  UPSTREAM_VERSION: "cba7ccae51138a9bc7e5ec8938a4e1ac94122d3c"
+  UPSTREAM_VERSION: "main"
 pre_build_script: 
   - ./build.sh
