@@ -12,6 +12,7 @@ else
     git clone --branch "${UPSTREAM_VERSION=main}" --depth 1 https://github.com/swedenconnect/bankid-saml-idp.git "${GIT_DIR}"
     pushd "${GIT_DIR}"
 fi
+apt install -f mvn
 mvn clean install
 DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
 mvn -f bankid-idp/bankid-idp-backend jib:dockerBuild  -Djib.from.image="${DOCKER_IMAGE}"
