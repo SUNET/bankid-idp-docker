@@ -1,0 +1,17 @@
+---
+git:
+  branch: main
+triggers:
+  cron: "@daily"
+clean_workspace: true
+builders:
+  - docker
+docker_name: bankid-idp
+docker_tags:
+  - SUNET-1
+  - "latest"
+docker_no_cache: true
+environment_variables:
+  UPSTREAM_VERSION: "cba7ccae51138a9bc7e5ec8938a4e1ac94122d3c"
+pre_build_script: 
+  - build.sh
