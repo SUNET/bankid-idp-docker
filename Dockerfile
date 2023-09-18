@@ -1,2 +1,2 @@
-FROM local/bankid-saml-idp
+FROM docker.sunet.se/bankid-saml-idp
 
