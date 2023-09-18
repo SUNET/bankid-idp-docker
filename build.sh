@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 export DOCKER_REPO=local
-docker build -t debian:bookworm-slim-java .
+docker build -t debian:bookworm-slim-java build-pre-image
 
 GIT_DIR="build_bankid-saml-idp"
 
@@ -18,4 +18,4 @@ mvn -version
 mvn clean install
 
 DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
-mvn -f bankid-idp/bankid-idp-backend jib:dockerBuild  -Djib.from.image="${DOCKER_IMAGE}"
+mvn -f bankid-idp/bankid-idp-backend jib:dockerBuild -Djib.from.image="${DOCKER_IMAGE}"
