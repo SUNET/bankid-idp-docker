@@ -12,7 +12,7 @@ else
     git clone --branch "${UPSTREAM_VERSION=main}" --depth 1 https://github.com/swedenconnect/bankid-saml-idp.git "${GIT_DIR}"
     pushd "${GIT_DIR}"
 fi
-apt install -u openjdk-17-jdk-headless
+apt install -y openjdk-17-jdk-headless
 apt install -y maven
 mvn -version
 mvn clean install
