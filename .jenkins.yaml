@@ -11,6 +11,7 @@ docker_tags:
   - SUNET-1
   - "latest"
 docker_no_cache: true
+docker_force_pull: false
 environment_variables:
   UPSTREAM_VERSION: "main"
 pre_build_script: 
