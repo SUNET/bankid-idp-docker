@@ -14,5 +14,5 @@ docker_no_cache: true
 docker_force_pull: false
 environment_variables:
   UPSTREAM_VERSION: "main"
-pre_build_script: 
+pre_build_script:
   - ./build.sh
