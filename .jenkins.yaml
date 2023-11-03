@@ -13,6 +13,6 @@ docker_tags:
 docker_no_cache: true
 docker_force_pull: false
 environment_variables:
-  UPSTREAM_VERSION: "bugfix/redis-cluster-config"
+  UPSTREAM_VERSION: "main"
 pre_build_script: 
   - ./build.sh
