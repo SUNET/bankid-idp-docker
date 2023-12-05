@@ -19,4 +19,4 @@ mvn -version
 mvn clean install
 
 DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
-mvn -f bankid-idp jib:dockerBuild -Djib.from.image="${DOCKER_IMAGE}"
+mvn -f bankid-idp jib:dockerBuild@local -Djib.from.image="${DOCKER_IMAGE}"
