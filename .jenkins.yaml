@@ -8,7 +8,7 @@ builders:
   - docker
 docker_name: bankid-idp
 docker_tags:
-  - SUNET-1
+  - 1.1.2
   - "latest"
 docker_no_cache: true
 docker_force_pull: false
