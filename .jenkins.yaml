@@ -8,11 +8,11 @@ builders:
   - docker
 docker_name: bankid-idp
 docker_tags:
-  - 1.2.0
+  - 1.2.1
   - "latest"
 docker_no_cache: true
 docker_force_pull: false
 environment_variables:
-  UPSTREAM_VERSION: "1.2.0"
+  UPSTREAM_VERSION: "1.2.1"
 pre_build_script:
   - ./build.sh
