@@ -25,4 +25,5 @@ for version in ${UPSTREAM_VERSIONS}; do
     cp ../FPTestcert5_20240610.pem bankid-idp/src/main/resources/bankid-trust-test.crt
     mvn -f bankid-idp jib:dockerBuild@local -Djib.from.image="${DOCKER_IMAGE}" -Djib.to.image="${DOCKER_REPO}/bankid-idp:${version}"
     docker push "${DOCKER_REPO}/bankid-idp:${version}"
+    popd
 done
