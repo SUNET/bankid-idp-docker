@@ -22,7 +22,7 @@ for version in ${UPSTREAM_VERSIONS}; do
     DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
 
     #patch to use new test cert
-    cp ../FPTestcert5_20240610.pem bankid-idp/src/main/resources/bankid-trust-test.crt
+    cp ../FPTestcert5_20240610.pem bankid-api/src/main/resources/trust/bankid-trust-test.crt
     mvn --batch-mode --no-transfer-progress -f bankid-idp jib:dockerBuild@local -Djib.from.image="${DOCKER_IMAGE}" -Djib.to.image="${DOCKER_REPO}/bankid-idp:${version}"
     docker push "${DOCKER_REPO}/bankid-idp:${version}"
     popd
