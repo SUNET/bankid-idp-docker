@@ -17,13 +17,13 @@ for version in ${UPSTREAM_VERSIONS}; do
     apt-get install -y openjdk-17-jdk-headless
     apt-get install -y maven
     mvn -version
-    mvn clean install
+    mvn --batch-mode --no-transfer-progress clean install
 
     DOCKER_IMAGE="docker://debian:bookworm-slim-java" 
 
     #patch to use new test cert
     cp ../FPTestcert5_20240610.pem bankid-idp/src/main/resources/bankid-trust-test.crt
-    mvn --batch-mode -f bankid-idp jib:dockerBuild@local -Djib.from.image="${DOCKER_IMAGE}" -Djib.to.image="${DOCKER_REPO}/bankid-idp:${version}"
+    mvn --batch-mode --no-transfer-progress -f bankid-idp jib:dockerBuild@local -Djib.from.image="${DOCKER_IMAGE}" -Djib.to.image="${DOCKER_REPO}/bankid-idp:${version}"
     docker push "${DOCKER_REPO}/bankid-idp:${version}"
     popd
 done
