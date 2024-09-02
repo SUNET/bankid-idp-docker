@@ -5,7 +5,7 @@ triggers:
   cron: "@daily"
 clean_workspace: true
 builders:
-  - docker
+  - script
 docker_name: bankid-idp
 docker_no_cache: true
 docker_force_pull: false
