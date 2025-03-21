@@ -10,6 +10,6 @@ docker_name: bankid-idp
 docker_no_cache: true
 docker_force_pull: false
 environment_variables:
-  UPSTREAM_VERSIONS: "1.1.2 1.2.1"
+  UPSTREAM_VERSIONS: "1.1.2 1.2.1 1.2.3"
 script:
   - ./build.sh
